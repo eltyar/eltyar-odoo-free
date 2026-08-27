@@ -11,7 +11,7 @@ system parameter. The banner text and background color are configurable.
 
 Pure server-side QWeb: no JavaScript, no bundled assets, and no dependency
 beyond the standard web module. Compatible with Odoo 14 through 19.""",
-    "version": "19.0.1.0.0",
+    "version": "18.0.1.0.0",
     "author": "Mohamed Eltayar",
     "website": "https://eltyar.com",
     "category": "Technical",
