@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!--
+        Environment banner - pure server-side QWeb, no JS, no assets.
+        Compatible with Odoo 14-19: <body class="o_web_client"> is a flex column
+        in every version; CSS `order:-1` paints this banner visually above the
+        navbar (which is prepended to body by JS at runtime) and the navbar
+        shifts down by the banner height automatically.
+
+        Configuration (Settings > Technical > System Parameters):
+        - environment_banner.mode  : auto (default) | on | off
+          auto = neutralized databases (uuid prefix "neutralized-") or
+                 database names containing staging/test/demo
+        - environment_banner.label : custom banner text (optional)
+        - environment_banner.color : background color, e.g. #D0442C (optional)
+    -->
+    <template id="webclient_bootstrap_banner" inherit_id="web.webclient_bootstrap"
+              name="Environment Banner">
+        <xpath expr="//t[@t-call='web.layout']" position="inside">
+            <t t-set="body_classname" t-value="(body_classname or '') + ' o_has_environment_banner'"/>
+            <!-- sudo: ir.config_parameter is not readable by regular backend
+                 users, and the banner state is not sensitive information. -->
+            <t t-set="env_banner_params" t-value="request.env['ir.config_parameter'].sudo()"/>
+            <t t-set="env_banner_mode"
+               t-value="env_banner_params.get_param('environment_banner.mode') or 'auto'"/>
+            <t t-set="env_banner_show"
+               t-value="env_banner_mode == 'on' or (env_banner_mode == 'auto' and (
+                    env_banner_params.get_param('database.uuid', '').startswith('neutralized-')
+                    or any(marker in (request.db or '') for marker in ('staging', 'test', 'demo'))))"/>
+            <div t-if="env_banner_show"
+                 class="o_environment_banner"
+                 t-attf-style="background-color: {{ env_banner_params.get_param('environment_banner.color') or '#D0442C' }};">
+                <t t-esc="env_banner_params.get_param('environment_banner.label') or 'Warning: you are working on a non-production database.'"/>
+            </div>
+            <style>
+                .o_has_environment_banner .o_environment_banner {
+                    flex: 0 0 auto;
+                    order: -1;
+                    width: 100%;
+                    padding: 6px 16px;
+                    color: #ffffff;
+                    font-size: 13px;
+                    font-weight: 500;
+                    text-align: center;
+                }
+            </style>
+        </xpath>
+    </template>
+</odoo>
