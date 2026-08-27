@@ -1,0 +1,108 @@
+<section style="max-width: 1080px; margin: 0 auto; font-family: sans-serif; color: #374151;">
+
+    <div style="text-align: center; padding: 24px 0 8px 0;">
+        <h1 style="font-size: 30px; color: #16213E; margin-bottom: 6px;">Environment Banner</h1>
+        <p style="font-size: 16px; color: #6B7280; margin: 0;">
+            A clear warning banner for staging and non-production databases.
+        </p>
+    </div>
+
+    <hr style="border: none; border-top: 1px solid #E5E7EB; margin: 16px 0 28px 0;"/>
+
+    <div style="text-align: center; margin: 0 0 28px 0;">
+        <img src="main_screenshot.png" alt="Default red warning banner above the Odoo navbar"
+             style="max-width: 100%; border: 1px solid #E5E7EB; border-radius: 8px; box-shadow: 0 2px 8px rgba(22,33,62,0.08);"/>
+        <p style="font-size: 13px; color: #6B7280; margin: 8px 0 0 0;">
+            The default banner, shown automatically on a staging database.
+        </p>
+    </div>
+
+    <h2 style="font-size: 22px; color: #16213E;">Overview</h2>
+    <p style="font-size: 15px; line-height: 1.7;">
+        Working on a staging or test database that looks exactly like production is a recipe
+        for mistakes: test e-mails sent to real customers, dummy records created on live data,
+        or hours lost to confusion between environments. Environment Banner paints a colored,
+        always-visible bar above the navigation bar so every user immediately knows they are
+        <strong>not</strong> working on production.
+    </p>
+
+    <h2 style="font-size: 22px; color: #16213E;">Key Features</h2>
+    <ul style="font-size: 15px; line-height: 1.9;">
+        <li><strong>Automatic detection</strong> — the banner appears on neutralized databases
+            and on databases whose name contains <em>staging</em>, <em>test</em> or <em>demo</em>.</li>
+        <li><strong>Manual override</strong> — force the banner on or off with one system
+            parameter, whatever the automatic detection says.</li>
+        <li><strong>Custom text and color</strong> — adapt the message and background color
+            to your workflow (e.g. different colors per client or per stage).</li>
+        <li><strong>Zero footprint</strong> — pure server-side QWeb. No JavaScript, no bundled
+            assets, no dependency beyond the standard <em>web</em> module.</li>
+        <li><strong>Proven rendering</strong> — the technique works identically from Odoo 14
+            to Odoo 19, so you can standardize all your environments on one module.</li>
+    </ul>
+
+    <h2 style="font-size: 22px; color: #16213E;">How It Works</h2>
+    <p style="font-size: 15px; line-height: 1.7;">
+        The module extends the web client bootstrap template. On every page load, before the
+        page is rendered, it checks the database and the configuration parameters, and when the
+        environment is not production it renders the warning bar above the navbar. There is
+        nothing to configure on install: it works out of the box on databases it can detect,
+        and stays completely invisible everywhere else.
+    </p>
+
+    <h2 style="font-size: 22px; color: #16213E;">Configuration</h2>
+    <p style="font-size: 15px; line-height: 1.7;">
+        All options are standard system parameters
+        (<em>Settings &gt; Technical &gt; System Parameters</em>):
+    </p>
+    <table style="width: 100%; border-collapse: collapse; font-size: 14px; margin: 12px 0 8px 0;">
+        <tr style="background: #16213E; color: #FFFFFF; text-align: left;">
+            <th style="padding: 10px 12px;">Parameter</th>
+            <th style="padding: 10px 12px;">Default</th>
+            <th style="padding: 10px 12px;">Description</th>
+        </tr>
+        <tr style="border-bottom: 1px solid #E5E7EB;">
+            <td style="padding: 10px 12px;"><code>environment_banner.mode</code></td>
+            <td style="padding: 10px 12px;"><code>auto</code></td>
+            <td style="padding: 10px 12px;"><code>auto</code>, <code>on</code> (always show) or <code>off</code> (never show)</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #E5E7EB;">
+            <td style="padding: 10px 12px;"><code>environment_banner.label</code></td>
+            <td style="padding: 10px 12px;">built-in message</td>
+            <td style="padding: 10px 12px;">Custom banner text</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #E5E7EB;">
+            <td style="padding: 10px 12px;"><code>environment_banner.color</code></td>
+            <td style="padding: 10px 12px;"><code>#D0442C</code></td>
+            <td style="padding: 10px 12px;">Banner background color (CSS color)</td>
+        </tr>
+    </table>
+    <p style="font-size: 14px; color: #6B7280; line-height: 1.7;">
+        Example: set <code>environment_banner.mode</code> to <code>on</code> and
+        <code>environment_banner.color</code> to <code>#7A4DD7</code> to mark an internal
+        training database with a purple banner.
+    </p>
+
+    <div style="text-align: center; margin: 24px 0;">
+        <img src="custom_banner.png" alt="Custom purple banner with a custom label"
+             style="max-width: 100%; border: 1px solid #E5E7EB; border-radius: 8px; box-shadow: 0 2px 8px rgba(22,33,62,0.08);"/>
+        <p style="font-size: 13px; color: #6B7280; margin: 8px 0 0 0;">
+            Fully customizable: your own text, your own color.
+        </p>
+    </div>
+
+    <div style="text-align: center; margin: 24px 0;">
+        <img src="banner_inside_app.png" alt="The banner stays visible inside every application"
+             style="max-width: 100%; border: 1px solid #E5E7EB; border-radius: 8px; box-shadow: 0 2px 8px rgba(22,33,62,0.08);"/>
+        <p style="font-size: 13px; color: #6B7280; margin: 8px 0 0 0;">
+            The banner follows users into every application — impossible to miss.
+        </p>
+    </div>
+
+    <h2 style="font-size: 22px; color: #16213E;">Technical Notes</h2>
+    <ul style="font-size: 15px; line-height: 1.9;">
+        <li>The bar is rendered server-side on every page — no client-side flicker.</li>
+        <li>No data is collected, no external calls are made, nothing is downloaded.</li>
+        <li>Licensed under LGPL-3 — author: Mohamed Eltayar, <a href="https://eltyar.com">eltyar.com</a>.</li>
+    </ul>
+
+</section>
