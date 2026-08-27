@@ -25,4 +25,4 @@ Set under *Settings > Technical > System Parameters*:
 
 ## License
 
-LGPL-3. Author: Mohamed Eltayar — <https://eltyar.com>
+LGPL-3. Author: Mohamed Eltayar - <https://eltyar.com>
