@@ -1,108 +1,147 @@
-<section style="max-width: 1080px; margin: 0 auto; font-family: sans-serif; color: #374151;">
+<section style="max-width: 1080px; margin: 0 auto; font-family: -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; color: #374151; line-height: 1.6;">
 
-    <div style="text-align: center; padding: 24px 0 8px 0;">
-        <h1 style="font-size: 30px; color: #16213E; margin-bottom: 6px;">Environment Banner</h1>
-        <p style="font-size: 16px; color: #6B7280; margin: 0;">
-            A clear warning banner for staging and non-production databases.
+    <!-- =========== HERO =========== -->
+    <div style="background: #16213E; border-radius: 14px; padding: 34px 30px 26px 30px; text-align: center; margin-bottom: 26px;">
+        <h1 style="color: #ffffff; font-size: 32px; font-weight: 700; margin: 0 0 10px 0; letter-spacing: 0.5px;">
+            Environment Banner
+        </h1>
+        <p style="color: #C7D0E0; font-size: 17px; margin: 0 0 14px 0;">
+            Know at a glance whether you are on production &#8212; or not.
+        </p>
+        <div style="display: inline-block; background: #D0442C; color: #ffffff; font-size: 13px; font-weight: 600; letter-spacing: 1px; padding: 6px 18px; border-radius: 20px; text-transform: uppercase;">
+            Staging &#183; Test &#183; QA databases
+        </div>
+    </div>
+
+    <div style="text-align: center; margin: 0 0 34px 0;">
+        <img src="./images/main_screenshot.png" alt="Red warning banner displayed above the Odoo navbar on a staging database"
+             style="max-width: 100%; border: 1px solid #E5E7EB; border-radius: 10px; box-shadow: 0 6px 22px rgba(22,33,62,0.16);"/>
+        <p style="font-size: 13px; color: #6B7280; margin: 10px 0 0 0;">
+            Automatic red banner on a staging database &#8212; impossible to miss, impossible to forget.
         </p>
     </div>
 
-    <hr style="border: none; border-top: 1px solid #E5E7EB; margin: 16px 0 28px 0;"/>
-
-    <div style="text-align: center; margin: 0 0 28px 0;">
-        <img src="./images/main_screenshot.png" alt="Default red warning banner above the Odoo navbar"
-             style="max-width: 100%; border: 1px solid #E5E7EB; border-radius: 8px; box-shadow: 0 2px 8px rgba(22,33,62,0.08);"/>
-        <p style="font-size: 13px; color: #6B7280; margin: 8px 0 0 0;">
-            The default banner, shown automatically on a staging database.
-        </p>
-    </div>
-
-    <h2 style="font-size: 22px; color: #16213E;">Overview</h2>
-    <p style="font-size: 15px; line-height: 1.7;">
-        Working on a staging or test database that looks exactly like production is a recipe
-        for mistakes: test e-mails sent to real customers, dummy records created on live data,
-        or hours lost to confusion between environments. Environment Banner paints a colored,
-        always-visible bar above the navigation bar so every user immediately knows they are
+    <!-- =========== THE PROBLEM =========== -->
+    <h2 style="font-size: 23px; color: #16213E; font-weight: 700; border-left: 5px solid #D0442C; padding-left: 12px; margin: 34px 0 14px 0;">
+        Why you need it
+    </h2>
+    <p style="font-size: 15px; margin: 0 0 18px 0;">
+        A staging database that looks exactly like production is an accident waiting to happen:
+        test e-mails sent to real customers, dummy records created on live data, hours lost to
+        confusion between environments. Environment Banner paints a colored, always-visible bar
+        above the navigation bar, so every user immediately knows they are
         <strong>not</strong> working on production.
     </p>
 
-    <h2 style="font-size: 22px; color: #16213E;">Key Features</h2>
-    <ul style="font-size: 15px; line-height: 1.9;">
-        <li><strong>Automatic detection</strong> — the banner appears on neutralized databases
-            and on databases whose name contains <em>staging</em>, <em>test</em> or <em>demo</em>.</li>
-        <li><strong>Manual override</strong> — force the banner on or off with one system
-            parameter, whatever the automatic detection says.</li>
-        <li><strong>Custom text and color</strong> — adapt the message and background color
-            to your workflow (e.g. different colors per client or per stage).</li>
-        <li><strong>Zero footprint</strong> — pure server-side QWeb. No JavaScript, no bundled
-            assets, no dependency beyond the standard <em>web</em> module.</li>
-        <li><strong>Proven rendering</strong> — the technique works identically from Odoo 14
-            to Odoo 19, so you can standardize all your environments on one module.</li>
-    </ul>
+    <div class="d-flex" style="display: flex; flex-wrap: wrap; gap: 14px; margin: 0 0 34px 0;">
+        <div style="flex: 1 1 280px; background: #F8FAFC; border: 1px solid #E5E7EB; border-radius: 10px; padding: 16px 18px;">
+            <div style="font-size: 24px; line-height: 1;">&#9888;</div>
+            <div style="font-weight: 700; color: #16213E; margin: 8px 0 6px 0;">Prevent mistakes</div>
+            <div style="font-size: 14px; color: #4B5563;">Stop test e-mails and dummy records from ever reaching real customers.</div>
+        </div>
+        <div style="flex: 1 1 280px; background: #F8FAFC; border: 1px solid #E5E7EB; border-radius: 10px; padding: 16px 18px;">
+            <div style="font-size: 24px; line-height: 1;">&#9889;</div>
+            <div style="font-weight: 700; color: #16213E; margin: 8px 0 6px 0;">Zero footprint</div>
+            <div style="font-size: 14px; color: #4B5563;">Pure server-side QWeb. No JavaScript, no assets, depends only on <em>web</em>.</div>
+        </div>
+        <div style="flex: 1 1 280px; background: #F8FAFC; border: 1px solid #E5E7EB; border-radius: 10px; padding: 16px 18px;">
+            <div style="font-size: 24px; line-height: 1;">&#9881;</div>
+            <div style="font-weight: 700; color: #16213E; margin: 8px 0 6px 0;">Yours to style</div>
+            <div style="font-size: 14px; color: #4B5563;">Custom message and color per database, client or workflow stage.</div>
+        </div>
+    </div>
 
-    <h2 style="font-size: 22px; color: #16213E;">How It Works</h2>
-    <p style="font-size: 15px; line-height: 1.7;">
-        The module extends the web client bootstrap template. On every page load, before the
-        page is rendered, it checks the database and the configuration parameters, and when the
-        environment is not production it renders the warning bar above the navbar. There is
-        nothing to configure on install: it works out of the box on databases it can detect,
-        and stays completely invisible everywhere else.
-    </p>
+    <!-- =========== FEATURES =========== -->
+    <h2 style="font-size: 23px; color: #16213E; font-weight: 700; border-left: 5px solid #D0442C; padding-left: 12px; margin: 34px 0 14px 0;">
+        Key features
+    </h2>
+    <div class="row" style="display: flex; flex-wrap: wrap; margin: 0 0 30px 0;">
+        <div class="col-md-6" style="flex: 1 1 420px; padding: 4px 10px 4px 0;">
+            <ul style="font-size: 15px; margin: 0; padding-left: 4px; list-style: none;">
+                <li style="padding: 6px 0;"><span style="color: #059669; font-weight: 700;">&#10004;</span>&nbsp; <strong>Automatic detection</strong> for neutralized databases and names containing <em>staging</em>, <em>test</em> or <em>demo</em></li>
+                <li style="padding: 6px 0;"><span style="color: #059669; font-weight: 700;">&#10004;</span>&nbsp; <strong>Manual override</strong> with a single system parameter: <em>on</em>, <em>off</em> or <em>auto</em></li>
+                <li style="padding: 6px 0;"><span style="color: #059669; font-weight: 700;">&#10004;</span>&nbsp; <strong>Custom text and color</strong> &#8212; adapt the banner to any workflow</li>
+            </ul>
+        </div>
+        <div class="col-md-6" style="flex: 1 1 420px; padding: 4px 10px 4px 0;">
+            <ul style="font-size: 15px; margin: 0; padding-left: 4px; list-style: none;">
+                <li style="padding: 6px 0;"><span style="color: #059669; font-weight: 700;">&#10004;</span>&nbsp; <strong>Server-rendered</strong> on every page &#8212; no flicker, no client-side logic</li>
+                <li style="padding: 6px 0;"><span style="color: #059669; font-weight: 700;">&#10004;</span>&nbsp; <strong>Follows users everywhere</strong> &#8212; the bar stays above the navbar in every application</li>
+                <li style="padding: 6px 0;"><span style="color: #059669; font-weight: 700;">&#10004;</span>&nbsp; <strong>Odoo 14 to 19</strong> &#8212; one module standardizes all your environments</li>
+            </ul>
+        </div>
+    </div>
 
-    <h2 style="font-size: 22px; color: #16213E;">Configuration</h2>
-    <p style="font-size: 15px; line-height: 1.7;">
-        All options are standard system parameters
-        (<em>Settings &gt; Technical &gt; System Parameters</em>):
+    <!-- =========== GALLERY =========== -->
+    <h2 style="font-size: 23px; color: #16213E; font-weight: 700; border-left: 5px solid #D0442C; padding-left: 12px; margin: 34px 0 14px 0;">
+        See it in action
+    </h2>
+    <div style="text-align: center; margin: 0 0 14px 0;">
+        <img src="./images/custom_banner.png" alt="Fully customized purple banner with a custom warning message"
+             style="max-width: 100%; border: 1px solid #E5E7EB; border-radius: 10px; box-shadow: 0 4px 14px rgba(22,33,62,0.10);"/>
+        <p style="font-size: 13px; color: #6B7280; margin: 8px 0 22px 0;">
+            Fully customizable: your own message, your own color.
+        </p>
+        <img src="./images/banner_inside_app.png" alt="The banner stays visible above the navbar inside every Odoo application"
+             style="max-width: 100%; border: 1px solid #E5E7EB; border-radius: 10px; box-shadow: 0 4px 14px rgba(22,33,62,0.10);"/>
+        <p style="font-size: 13px; color: #6B7280; margin: 8px 0 0 0;">
+            The banner follows users into every application &#8212; impossible to miss.
+        </p>
+    </div>
+
+    <!-- =========== CONFIGURATION =========== -->
+    <h2 style="font-size: 23px; color: #16213E; font-weight: 700; border-left: 5px solid #D0442C; padding-left: 12px; margin: 34px 0 14px 0;">
+        Configuration in 3 parameters
+    </h2>
+    <p style="font-size: 15px; margin: 0 0 12px 0;">
+        Everything is managed with standard system parameters
+        (<em>Settings &#8250; Technical &#8250; System Parameters</em>). Nothing to configure on install:
+        detection works out of the box.
     </p>
-    <table style="width: 100%; border-collapse: collapse; font-size: 14px; margin: 12px 0 8px 0;">
-        <tr style="background: #16213E; color: #FFFFFF; text-align: left;">
-            <th style="padding: 10px 12px;">Parameter</th>
-            <th style="padding: 10px 12px;">Default</th>
-            <th style="padding: 10px 12px;">Description</th>
+    <table style="width: 100%; border-collapse: collapse; font-size: 14px; margin: 0 0 12px 0;">
+        <tr style="background: #16213E; color: #ffffff; text-align: left;">
+            <th style="padding: 10px 14px;">Parameter</th>
+            <th style="padding: 10px 14px;">Default</th>
+            <th style="padding: 10px 14px;">Description</th>
         </tr>
         <tr style="border-bottom: 1px solid #E5E7EB;">
-            <td style="padding: 10px 12px;"><code>environment_banner.mode</code></td>
-            <td style="padding: 10px 12px;"><code>auto</code></td>
-            <td style="padding: 10px 12px;"><code>auto</code>, <code>on</code> (always show) or <code>off</code> (never show)</td>
+            <td style="padding: 10px 14px;"><code>environment_banner.mode</code></td>
+            <td style="padding: 10px 14px;"><code>auto</code></td>
+            <td style="padding: 10px 14px;"><code>auto</code>, <code>on</code> (always show) or <code>off</code> (never show)</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #E5E7EB; background: #F8FAFC;">
+            <td style="padding: 10px 14px;"><code>environment_banner.label</code></td>
+            <td style="padding: 10px 14px;">built-in message</td>
+            <td style="padding: 10px 14px;">Custom banner text</td>
         </tr>
         <tr style="border-bottom: 1px solid #E5E7EB;">
-            <td style="padding: 10px 12px;"><code>environment_banner.label</code></td>
-            <td style="padding: 10px 12px;">built-in message</td>
-            <td style="padding: 10px 12px;">Custom banner text</td>
-        </tr>
-        <tr style="border-bottom: 1px solid #E5E7EB;">
-            <td style="padding: 10px 12px;"><code>environment_banner.color</code></td>
-            <td style="padding: 10px 12px;"><code>#D0442C</code></td>
-            <td style="padding: 10px 12px;">Banner background color (CSS color)</td>
+            <td style="padding: 10px 14px;"><code>environment_banner.color</code></td>
+            <td style="padding: 10px 14px;"><code>#D0442C</code></td>
+            <td style="padding: 10px 14px;">Banner background color (CSS color)</td>
         </tr>
     </table>
-    <p style="font-size: 14px; color: #6B7280; line-height: 1.7;">
+    <p style="font-size: 14px; color: #6B7280; margin: 0 0 30px 0;">
         Example: set <code>environment_banner.mode</code> to <code>on</code> and
         <code>environment_banner.color</code> to <code>#7A4DD7</code> to mark an internal
         training database with a purple banner.
     </p>
 
-    <div style="text-align: center; margin: 24px 0;">
-        <img src="./images/custom_banner.png" alt="Custom purple banner with a custom label"
-             style="max-width: 100%; border: 1px solid #E5E7EB; border-radius: 8px; box-shadow: 0 2px 8px rgba(22,33,62,0.08);"/>
-        <p style="font-size: 13px; color: #6B7280; margin: 8px 0 0 0;">
-            Fully customizable: your own text, your own color.
-        </p>
+    <!-- =========== COMPATIBILITY + LICENSE =========== -->
+    <div style="background: #F8FAFC; border: 1px solid #E5E7EB; border-radius: 10px; padding: 18px 22px; margin: 0 0 24px 0;">
+        <div style="font-weight: 700; color: #16213E; margin-bottom: 8px;">Compatibility</div>
+        <span style="display: inline-block; background: #16213E; color: #ffffff; font-size: 12px; font-weight: 600; padding: 4px 12px; border-radius: 14px; margin: 2px 4px 2px 0;">Odoo 19</span>
+        <span style="display: inline-block; background: #16213E; color: #ffffff; font-size: 12px; font-weight: 600; padding: 4px 12px; border-radius: 14px; margin: 2px 4px 2px 0;">Odoo 18</span>
+        <span style="display: inline-block; background: #16213E; color: #ffffff; font-size: 12px; font-weight: 600; padding: 4px 12px; border-radius: 14px; margin: 2px 4px 2px 0;">Odoo 17</span>
+        <span style="display: inline-block; background: #16213E; color: #ffffff; font-size: 12px; font-weight: 600; padding: 4px 12px; border-radius: 14px; margin: 2px 4px 2px 0;">Odoo 16</span>
+        <span style="display: inline-block; background: #16213E; color: #ffffff; font-size: 12px; font-weight: 600; padding: 4px 12px; border-radius: 14px; margin: 2px 4px 2px 0;">Odoo 15</span>
+        <span style="display: inline-block; background: #16213E; color: #ffffff; font-size: 12px; font-weight: 600; padding: 4px 12px; border-radius: 14px; margin: 2px 4px 2px 0;">Odoo 14</span>
+        <span style="display: inline-block; background: #ECFDF5; color: #059669; font-size: 12px; font-weight: 700; padding: 4px 12px; border-radius: 14px; margin: 2px 4px 2px 0;">Community Edition</span>
+        <span style="display: inline-block; background: #ECFDF5; color: #059669; font-size: 12px; font-weight: 700; padding: 4px 12px; border-radius: 14px; margin: 2px;">No configuration needed</span>
     </div>
 
-    <div style="text-align: center; margin: 24px 0;">
-        <img src="./images/banner_inside_app.png" alt="The banner stays visible inside every application"
-             style="max-width: 100%; border: 1px solid #E5E7EB; border-radius: 8px; box-shadow: 0 2px 8px rgba(22,33,62,0.08);"/>
-        <p style="font-size: 13px; color: #6B7280; margin: 8px 0 0 0;">
-            The banner follows users into every application — impossible to miss.
-        </p>
+    <div style="text-align: center; border-top: 1px solid #E5E7EB; padding-top: 18px; font-size: 14px; color: #6B7280;">
+        Licensed under <strong>LGPL-3</strong> &#183; No data collected, no external calls, nothing downloaded.<br/>
+        <strong style="color: #16213E;">Mohamed Eltayar</strong> &#8212; <a href="https://eltyar.com" style="color: #D0442C; font-weight: 600;">eltyar.com</a>
     </div>
-
-    <h2 style="font-size: 22px; color: #16213E;">Technical Notes</h2>
-    <ul style="font-size: 15px; line-height: 1.9;">
-        <li>The bar is rendered server-side on every page — no client-side flicker.</li>
-        <li>No data is collected, no external calls are made, nothing is downloaded.</li>
-        <li>Licensed under LGPL-3 — author: Mohamed Eltayar, <a href="https://eltyar.com">eltyar.com</a>.</li>
-    </ul>
 
 </section>
